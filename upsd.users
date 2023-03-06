@@ -1,0 +1,3 @@
+[upsmon]
+  password=__UPS_MON_PASSWORD__
+  upsmon primary
