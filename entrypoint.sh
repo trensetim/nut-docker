@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
 
 echo "container start initiated"
 echo "resetting /var/run/nut/shutdownflag"

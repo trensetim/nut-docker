@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
 # Default Shutdown Command Script
 # Executed once "ups.state==BL" (battery low)
 # By default, this will only set a flag (that could be read by the host system)
