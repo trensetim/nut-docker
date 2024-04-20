@@ -9,10 +9,9 @@ build_image:
         - docker
     script:
         # always build latest
-        - docker build -t $CI_REGISTRY/$CI_PROJECT_PATH .
-        - docker push $CI_REGISTRY/$CI_PROJECT_PATH
-        - docker build -t $CI_REGISTRY/$CI_PROJECT_PATH:shutdown-orchestrator-latest .
-        - docker push $CI_REGISTRY/$CI_PROJECT_PATH:shutdown-orchestrator-latest
+        - PLATFORMS="linux/arm/v7,linux/arm64,linux/amd64"
+        - docker buildx build --push --platform $PLATFORMS --tag $CI_REGISTRY/$CI_PROJECT_PATH .
+        - docker buildx build --push --platform $PLATFORMS --tag $CI_REGISTRY/$CI_PROJECT_PATH:shutdown-orchestrator-latest .
 
         # build tagged images if commit is a git tag
         - |
