@@ -10,7 +10,7 @@ build_image:
     script:
         # always build latest
         - PLATFORMS="linux/arm/v7,linux/arm64,linux/amd64"
-        - docker buildx create multiarch --use
+        - docker buildx create --name multiarch --driver docker-container --use
         - docker buildx build --push --platform $PLATFORMS --tag $CI_REGISTRY/$CI_PROJECT_PATH .
         - docker buildx build --push --platform $PLATFORMS --tag $CI_REGISTRY/$CI_PROJECT_PATH:shutdown-orchestrator-latest .
 
