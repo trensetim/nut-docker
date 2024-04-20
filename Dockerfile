@@ -1,6 +1,6 @@
 FROM alpine
 LABEL org.opencontainers.image.authors="Tim Trense <me@timtrense.com>"
-RUN apk add --update --no-cache nut libcrypto1.1 libssl1.1 net-snmp-libs bash
+RUN apk add --update --no-cache nut libcrypto3 libssl3 net-snmp-libs bash
 
 RUN mkdir -p /var/run/nut /etc/nut
 RUN chmod u=rwx,g=rx,o=rx /var/run/nut /etc/nut
