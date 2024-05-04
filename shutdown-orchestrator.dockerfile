@@ -1,6 +1,6 @@
 FROM alpine
 LABEL org.opencontainers.image.authors="Tim Trense <me@timtrense.com>"
-RUN apk add --update --no-cache bash openssh-client
+RUN apk add --update --no-cache bash openssh-client inotify-tools
 
 RUN mkdir -p /bin/shutdown.d /root/.ssh
 
